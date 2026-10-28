@@ -1,0 +1,802 @@
+{
+  "custom": {
+    "live": {}
+  },
+  "params": {
+    "window": 15
+  },
+  "props": {
+    "defaultSize": {
+      "width": 1300,
+      "height": 900
+    }
+  },
+  "root": {
+    "type": "ia.container.flex",
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "alignItems": "stretch",
+      "style": {
+        "classes": "tab-body"
+      }
+    },
+    "position": {
+      "shrink": 0
+    },
+    "children": [
+      {
+        "type": "ia.container.flex",
+        "meta": {
+          "name": "Tiles"
+        },
+        "props": {
+          "direction": "row",
+          "alignItems": "stretch",
+          "style": {
+            "classes": "",
+            "gap": "12px"
+          },
+          "wrap": "wrap"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "children": [
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Good"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "tile"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "140px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "GoodLabel"
+                },
+                "props": {
+                  "text": "Good meters",
+                  "style": {
+                    "classes": "tile-label"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "GoodValueRow"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "baseline",
+                  "style": {
+                    "classes": "",
+                    "gap": "5px"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "GoodValue"
+                    },
+                    "props": {
+                      "text": "",
+                      "style": {
+                        "classes": "tile-value"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "type": "property",
+                          "config": {
+                            "path": "view.custom.live.good_t"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "GoodUnit"
+                    },
+                    "props": {
+                      "text": "m",
+                      "style": {
+                        "classes": "tile-unit"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Reject"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "tile"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "140px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "RejectLabel"
+                },
+                "props": {
+                  "text": "Reject meters",
+                  "style": {
+                    "classes": "tile-label"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "RejectValueRow"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "baseline",
+                  "style": {
+                    "classes": "",
+                    "gap": "5px"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "RejectValue"
+                    },
+                    "props": {
+                      "text": "",
+                      "style": {
+                        "classes": "tile-value"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "type": "property",
+                          "config": {
+                            "path": "view.custom.live.reject_t"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "RejectUnit"
+                    },
+                    "props": {
+                      "text": "m",
+                      "style": {
+                        "classes": "tile-unit"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Product"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "tile"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "140px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "ProductLabel"
+                },
+                "props": {
+                  "text": "Product code",
+                  "style": {
+                    "classes": "tile-label"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "ProductValueRow"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "baseline",
+                  "style": {
+                    "classes": "",
+                    "gap": "5px"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "ProductValue"
+                    },
+                    "props": {
+                      "text": "",
+                      "style": {
+                        "classes": "tile-value"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "type": "property",
+                          "config": {
+                            "path": "view.custom.live.product_t"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Lanes"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "tile"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "140px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "LanesLabel"
+                },
+                "props": {
+                  "text": "Web lanes",
+                  "style": {
+                    "classes": "tile-label"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "LanesValueRow"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "baseline",
+                  "style": {
+                    "classes": "",
+                    "gap": "5px"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "LanesValue"
+                    },
+                    "props": {
+                      "text": "",
+                      "style": {
+                        "classes": "tile-value"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "type": "property",
+                          "config": {
+                            "path": "view.custom.live.lanes_t"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "ia.display.view",
+        "meta": {
+          "name": "GoodTrend"
+        },
+        "props": {
+          "path": "Press1/Parts/Trend",
+          "params": {
+            "title": "Good meters (cumulative)",
+            "unit": "m",
+            "keys": [
+              "good"
+            ],
+            "names": [
+              "Good meters"
+            ],
+            "colors": [
+              "d"
+            ],
+            "min": "",
+            "max": "",
+            "step": false,
+            "limit": null,
+            "axisLabel": "",
+            "window": 15
+          }
+        },
+        "position": {
+          "shrink": 0,
+          "basis": "220px"
+        },
+        "propConfig": {
+          "props.params.window": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.params.window"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.view",
+        "meta": {
+          "name": "RejectTrend"
+        },
+        "props": {
+          "path": "Press1/Parts/Trend",
+          "params": {
+            "title": "Reject meters (cumulative)",
+            "unit": "m",
+            "keys": [
+              "reject"
+            ],
+            "names": [
+              "Reject meters"
+            ],
+            "colors": [
+              "e"
+            ],
+            "min": "",
+            "max": "",
+            "step": false,
+            "limit": null,
+            "axisLabel": "",
+            "window": 15
+          }
+        },
+        "position": {
+          "shrink": 0,
+          "basis": "200px"
+        },
+        "propConfig": {
+          "props.params.window": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.params.window"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.view",
+        "meta": {
+          "name": "ProductTrend"
+        },
+        "props": {
+          "path": "Press1/Parts/Trend",
+          "params": {
+            "title": "Product code",
+            "unit": "",
+            "keys": [
+              "product"
+            ],
+            "names": [
+              "Product code"
+            ],
+            "colors": [
+              "c"
+            ],
+            "min": 100,
+            "max": 106,
+            "step": true,
+            "limit": null,
+            "axisLabel": "",
+            "window": 15
+          }
+        },
+        "position": {
+          "shrink": 0,
+          "basis": "160px"
+        },
+        "propConfig": {
+          "props.params.window": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.params.window"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.container.flex",
+        "meta": {
+          "name": "Jobs"
+        },
+        "props": {
+          "direction": "column",
+          "alignItems": "stretch",
+          "style": {
+            "classes": "card"
+          }
+        },
+        "position": {
+          "shrink": 0
+        },
+        "children": [
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "JobsHead_2"
+            },
+            "props": {
+              "direction": "row",
+              "alignItems": "center",
+              "style": {
+                "classes": ""
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "JobsTitle"
+                },
+                "props": {
+                  "text": "Jobs observed",
+                  "style": {
+                    "classes": "card-title"
+                  }
+                },
+                "position": {
+                  "grow": 1
+                }
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "JobsRight"
+                },
+                "props": {
+                  "text": "gateway buffer, since gateway start",
+                  "style": {
+                    "classes": "card-right"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "JobsHead"
+            },
+            "props": {
+              "direction": "row",
+              "alignItems": "stretch",
+              "style": {
+                "classes": ""
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "Th"
+                },
+                "props": {
+                  "text": "Product code",
+                  "style": {
+                    "classes": "th"
+                  }
+                },
+                "position": {
+                  "grow": 2,
+                  "shrink": 1,
+                  "basis": "0"
+                }
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "Th_2"
+                },
+                "props": {
+                  "text": "Lanes",
+                  "style": {
+                    "classes": "th"
+                  }
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 1,
+                  "basis": "0"
+                }
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "Th_3"
+                },
+                "props": {
+                  "text": "First seen",
+                  "style": {
+                    "classes": "th"
+                  }
+                },
+                "position": {
+                  "grow": 1.5,
+                  "shrink": 1,
+                  "basis": "0"
+                }
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "Th_4"
+                },
+                "props": {
+                  "text": "Last seen",
+                  "style": {
+                    "classes": "th"
+                  }
+                },
+                "position": {
+                  "grow": 1.5,
+                  "shrink": 1,
+                  "basis": "0"
+                }
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "Th_5"
+                },
+                "props": {
+                  "text": "Good m (delta)",
+                  "style": {
+                    "classes": "th"
+                  }
+                },
+                "position": {
+                  "grow": 1.5,
+                  "shrink": 1,
+                  "basis": "0"
+                }
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "Th_6"
+                },
+                "props": {
+                  "text": "Reject m (delta)",
+                  "style": {
+                    "classes": "th"
+                  }
+                },
+                "position": {
+                  "grow": 1.5,
+                  "shrink": 1,
+                  "basis": "0"
+                }
+              }
+            ]
+          },
+          {
+            "type": "ia.display.flex-repeater",
+            "meta": {
+              "name": "JobsRows"
+            },
+            "props": {
+              "path": "Press1/Parts/JobRow",
+              "direction": "column",
+              "wrap": "nowrap",
+              "instances": [],
+              "useDefaultViewWidth": false,
+              "useDefaultViewHeight": false,
+              "elementPosition": {
+                "grow": 0,
+                "shrink": 0,
+                "basis": "31px"
+              },
+              "style": {}
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.instances": {
+                "binding": {
+                  "type": "expr",
+                  "config": {
+                    "expression": "now(2000)"
+                  },
+                  "transforms": [
+                    {
+                      "type": "script",
+                      "code": "\treturn press1.cells(press1.jobs(), ['product', 'lanes', 'first', 'last', 'good', 'reject'], 'Collecting samples...')"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          {
+            "type": "ia.display.label",
+            "meta": {
+              "name": "JobsNote"
+            },
+            "props": {
+              "text": "The first row can be a partial job if the gateway started mid-job. Deltas show a dash when a counter reset (sim restart) falls inside the job.",
+              "style": {
+                "classes": "tile-sub",
+                "whiteSpace": "normal",
+                "marginTop": "8px"
+              }
+            },
+            "position": {
+              "shrink": 0
+            }
+          }
+        ]
+      },
+      {
+        "type": "ia.display.label",
+        "meta": {
+          "name": "Footnote"
+        },
+        "props": {
+          "text": "Counters are raw PLC totals. They reset to 0 if the simulator is restarted.",
+          "style": {
+            "classes": "note",
+            "whiteSpace": "normal"
+          }
+        },
+        "position": {
+          "shrink": 0
+        }
+      }
+    ]
+  },
+  "propConfig": {
+    "custom.live": {
+      "binding": {
+        "type": "expr",
+        "config": {
+          "expression": "now(2000)"
+        },
+        "transforms": [
+          {
+            "type": "script",
+            "code": "\treturn press1.latest()"
+          }
+        ]
+      }
+    },
+    "params.window": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "custom": {},
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "width": 1300,
+      "height": 300
+    }
+  },
+  "root": {
+    "type": "ia.container.flex",
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "alignItems": "stretch",
+      "style": {
+        "classes": "tab-body"
+      }
+    },
+    "position": {
+      "shrink": 0
+    },
+    "children": [
+      {
+        "type": "ia.display.label",
+        "meta": {
+          "name": "Note"
+        },
+        "props": {
+          "text": "This tab is built in a later step.",
+          "style": {
+            "classes": "muted"
+          }
+        },
+        "position": {
+          "shrink": 0
+        }
+      }
+    ]
+  }
+}

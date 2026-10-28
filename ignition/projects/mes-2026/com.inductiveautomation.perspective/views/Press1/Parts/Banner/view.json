@@ -1,0 +1,190 @@
+{
+  "custom": {
+    "live": {}
+  },
+  "params": {},
+  "props": {
+    "defaultSize": {
+      "width": 1200,
+      "height": 70
+    }
+  },
+  "root": {
+    "type": "ia.container.flex",
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "row",
+      "alignItems": "center",
+      "style": {
+        "classes": "banner"
+      },
+      "wrap": "wrap"
+    },
+    "position": {
+      "shrink": 0
+    },
+    "propConfig": {
+      "props.style.classes": {
+        "binding": {
+          "type": "expr",
+          "config": {
+            "expression": "\"banner \" + {view.custom.live.state_cls}"
+          }
+        }
+      }
+    },
+    "children": [
+      {
+        "type": "ia.display.label",
+        "meta": {
+          "name": "StateText"
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "classes": "banner-text"
+          }
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.custom.live.banner"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "meta": {
+          "name": "Job"
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "classes": "banner-job"
+          }
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.custom.live.job"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.container.flex",
+        "meta": {
+          "name": "Spacer"
+        },
+        "props": {
+          "direction": "row",
+          "alignItems": "stretch",
+          "style": {
+            "classes": ""
+          }
+        },
+        "position": {
+          "grow": 1
+        },
+        "children": []
+      },
+      {
+        "type": "ia.display.label",
+        "meta": {
+          "name": "RtoPill"
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "classes": "pill"
+          }
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.custom.live.rto_text"
+              }
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "type": "expr",
+              "config": {
+                "expression": "\"pill \" + {view.custom.live.rto_cls}"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "meta": {
+          "name": "ConnPill"
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "classes": "pill"
+          }
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.custom.live.conn_text"
+              }
+            }
+          },
+          "props.style.classes": {
+            "binding": {
+              "type": "expr",
+              "config": {
+                "expression": "\"pill \" + {view.custom.live.conn_cls}"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "propConfig": {
+    "custom.live": {
+      "binding": {
+        "type": "expr",
+        "config": {
+          "expression": "now(2000)"
+        },
+        "transforms": [
+          {
+            "type": "script",
+            "code": "\treturn press1.latest()"
+          }
+        ]
+      }
+    }
+  }
+}

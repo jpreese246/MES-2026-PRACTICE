@@ -1,0 +1,892 @@
+{
+  "custom": {
+    "live": {}
+  },
+  "params": {
+    "window": 15
+  },
+  "props": {
+    "defaultSize": {
+      "width": 1300,
+      "height": 900
+    }
+  },
+  "root": {
+    "type": "ia.container.flex",
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "alignItems": "stretch",
+      "style": {
+        "classes": "tab-body"
+      }
+    },
+    "position": {
+      "shrink": 0
+    },
+    "children": [
+      {
+        "type": "ia.container.flex",
+        "meta": {
+          "name": "Zones"
+        },
+        "props": {
+          "direction": "row",
+          "alignItems": "stretch",
+          "style": {
+            "classes": "",
+            "gap": "12px"
+          },
+          "wrap": "wrap"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "children": [
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Zone1"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "card"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "200px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "Zone1Label"
+                },
+                "props": {
+                  "text": "Zone 1",
+                  "style": {
+                    "classes": "tile-label"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "Zone1ValueRow"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "baseline",
+                  "style": {
+                    "classes": "",
+                    "gap": "4px",
+                    "margin": "4px 0 8px"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Zone1Value"
+                    },
+                    "props": {
+                      "text": "",
+                      "style": {
+                        "classes": "zone-val"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "type": "property",
+                          "config": {
+                            "path": "view.custom.live.z1_t"
+                          }
+                        }
+                      },
+                      "props.style.classes": {
+                        "binding": {
+                          "type": "expr",
+                          "config": {
+                            "expression": "{view.custom.live.z1_big}"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Zone1Unit"
+                    },
+                    "props": {
+                      "text": "°F",
+                      "style": {
+                        "classes": "zone-unit"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "Zone1Track"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "stretch",
+                  "style": {
+                    "classes": "zone-track"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.container.flex",
+                    "meta": {
+                      "name": "Zone1Fill"
+                    },
+                    "props": {
+                      "direction": "row",
+                      "alignItems": "stretch",
+                      "style": {
+                        "classes": "bar-good"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.style.classes": {
+                        "binding": {
+                          "type": "expr",
+                          "config": {
+                            "expression": "{view.custom.live.z1_bar}"
+                          }
+                        }
+                      },
+                      "props.style.width": {
+                        "binding": {
+                          "type": "expr",
+                          "config": {
+                            "expression": "toStr({view.custom.live.z1_pct}) + \"%\""
+                          }
+                        }
+                      }
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ia.container.flex",
+                    "meta": {
+                      "name": "Zone1Limit"
+                    },
+                    "props": {
+                      "direction": "row",
+                      "alignItems": "stretch",
+                      "style": {
+                        "classes": "zone-limit"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "Zone1Scale"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "stretch",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Zone1Lo"
+                    },
+                    "props": {
+                      "text": "0",
+                      "style": {
+                        "classes": "scale"
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Zone1Mid"
+                    },
+                    "props": {
+                      "text": "display limit 200",
+                      "style": {
+                        "classes": "scale",
+                        "textAlign": "center"
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Zone1Hi"
+                    },
+                    "props": {
+                      "text": "250",
+                      "style": {
+                        "classes": "scale",
+                        "textAlign": "right"
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Zone2"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "card"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "200px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "Zone2Label"
+                },
+                "props": {
+                  "text": "Zone 2",
+                  "style": {
+                    "classes": "tile-label"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "Zone2ValueRow"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "baseline",
+                  "style": {
+                    "classes": "",
+                    "gap": "4px",
+                    "margin": "4px 0 8px"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Zone2Value"
+                    },
+                    "props": {
+                      "text": "",
+                      "style": {
+                        "classes": "zone-val"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "type": "property",
+                          "config": {
+                            "path": "view.custom.live.z2_t"
+                          }
+                        }
+                      },
+                      "props.style.classes": {
+                        "binding": {
+                          "type": "expr",
+                          "config": {
+                            "expression": "{view.custom.live.z2_big}"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Zone2Unit"
+                    },
+                    "props": {
+                      "text": "°F",
+                      "style": {
+                        "classes": "zone-unit"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "Zone2Track"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "stretch",
+                  "style": {
+                    "classes": "zone-track"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.container.flex",
+                    "meta": {
+                      "name": "Zone2Fill"
+                    },
+                    "props": {
+                      "direction": "row",
+                      "alignItems": "stretch",
+                      "style": {
+                        "classes": "bar-good"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.style.classes": {
+                        "binding": {
+                          "type": "expr",
+                          "config": {
+                            "expression": "{view.custom.live.z2_bar}"
+                          }
+                        }
+                      },
+                      "props.style.width": {
+                        "binding": {
+                          "type": "expr",
+                          "config": {
+                            "expression": "toStr({view.custom.live.z2_pct}) + \"%\""
+                          }
+                        }
+                      }
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ia.container.flex",
+                    "meta": {
+                      "name": "Zone2Limit"
+                    },
+                    "props": {
+                      "direction": "row",
+                      "alignItems": "stretch",
+                      "style": {
+                        "classes": "zone-limit"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "Zone2Scale"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "stretch",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Zone2Lo"
+                    },
+                    "props": {
+                      "text": "0",
+                      "style": {
+                        "classes": "scale"
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Zone2Mid"
+                    },
+                    "props": {
+                      "text": "display limit 200",
+                      "style": {
+                        "classes": "scale",
+                        "textAlign": "center"
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Zone2Hi"
+                    },
+                    "props": {
+                      "text": "250",
+                      "style": {
+                        "classes": "scale",
+                        "textAlign": "right"
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Zone3"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "card"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "200px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "Zone3Label"
+                },
+                "props": {
+                  "text": "Zone 3",
+                  "style": {
+                    "classes": "tile-label"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "Zone3ValueRow"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "baseline",
+                  "style": {
+                    "classes": "",
+                    "gap": "4px",
+                    "margin": "4px 0 8px"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Zone3Value"
+                    },
+                    "props": {
+                      "text": "",
+                      "style": {
+                        "classes": "zone-val"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "type": "property",
+                          "config": {
+                            "path": "view.custom.live.z3_t"
+                          }
+                        }
+                      },
+                      "props.style.classes": {
+                        "binding": {
+                          "type": "expr",
+                          "config": {
+                            "expression": "{view.custom.live.z3_big}"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Zone3Unit"
+                    },
+                    "props": {
+                      "text": "°F",
+                      "style": {
+                        "classes": "zone-unit"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "Zone3Track"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "stretch",
+                  "style": {
+                    "classes": "zone-track"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.container.flex",
+                    "meta": {
+                      "name": "Zone3Fill"
+                    },
+                    "props": {
+                      "direction": "row",
+                      "alignItems": "stretch",
+                      "style": {
+                        "classes": "bar-good"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.style.classes": {
+                        "binding": {
+                          "type": "expr",
+                          "config": {
+                            "expression": "{view.custom.live.z3_bar}"
+                          }
+                        }
+                      },
+                      "props.style.width": {
+                        "binding": {
+                          "type": "expr",
+                          "config": {
+                            "expression": "toStr({view.custom.live.z3_pct}) + \"%\""
+                          }
+                        }
+                      }
+                    },
+                    "children": []
+                  },
+                  {
+                    "type": "ia.container.flex",
+                    "meta": {
+                      "name": "Zone3Limit"
+                    },
+                    "props": {
+                      "direction": "row",
+                      "alignItems": "stretch",
+                      "style": {
+                        "classes": "zone-limit"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "children": []
+                  }
+                ]
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "Zone3Scale"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "stretch",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Zone3Lo"
+                    },
+                    "props": {
+                      "text": "0",
+                      "style": {
+                        "classes": "scale"
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Zone3Mid"
+                    },
+                    "props": {
+                      "text": "display limit 200",
+                      "style": {
+                        "classes": "scale",
+                        "textAlign": "center"
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Zone3Hi"
+                    },
+                    "props": {
+                      "text": "250",
+                      "style": {
+                        "classes": "scale",
+                        "textAlign": "right"
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "ia.display.view",
+        "meta": {
+          "name": "ZoneTrend"
+        },
+        "props": {
+          "path": "Press1/Parts/Trend",
+          "params": {
+            "title": "Tunnel zone temperatures",
+            "unit": "°F",
+            "keys": [
+              "z1",
+              "z2",
+              "z3"
+            ],
+            "names": [
+              "Zone 1",
+              "Zone 2",
+              "Zone 3"
+            ],
+            "colors": [
+              "a",
+              "b",
+              "c"
+            ],
+            "min": "",
+            "max": 250,
+            "step": false,
+            "limit": 200,
+            "axisLabel": "",
+            "window": 15
+          }
+        },
+        "position": {
+          "shrink": 0,
+          "basis": "300px"
+        },
+        "propConfig": {
+          "props.params.window": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.params.window"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.view",
+        "meta": {
+          "name": "StateTrend"
+        },
+        "props": {
+          "path": "Press1/Parts/Trend",
+          "params": {
+            "title": "Machine state  (1 Running · 2 Setup · 3 Faulted)",
+            "unit": "",
+            "keys": [
+              "state"
+            ],
+            "names": [
+              "State"
+            ],
+            "colors": [
+              "a"
+            ],
+            "min": 0.5,
+            "max": 3.5,
+            "step": true,
+            "limit": null,
+            "axisLabel": "",
+            "window": 15
+          }
+        },
+        "position": {
+          "shrink": 0,
+          "basis": "210px"
+        },
+        "propConfig": {
+          "props.params.window": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.params.window"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "meta": {
+          "name": "Footnote"
+        },
+        "props": {
+          "text": "The red line is a display limit for this screen, not a PLC setpoint. A tunnel over-temp fault (code 102) drives all three zones above it. An RTO inhibit (code 103) stops the press without changing zone temperatures.",
+          "style": {
+            "classes": "note",
+            "whiteSpace": "normal"
+          }
+        },
+        "position": {
+          "shrink": 0
+        }
+      }
+    ]
+  },
+  "propConfig": {
+    "custom.live": {
+      "binding": {
+        "type": "expr",
+        "config": {
+          "expression": "now(2000)"
+        },
+        "transforms": [
+          {
+            "type": "script",
+            "code": "\treturn press1.latest()"
+          }
+        ]
+      }
+    },
+    "params.window": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  }
+}

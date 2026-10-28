@@ -1,0 +1,74 @@
+# --- Secrets ---------------------------------------------------------------
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+
+# --- OS --------------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- IDE / editor ----------------------------------------------------------
+.idea/
+.vscode/*
+!.vscode/settings.json
+!.vscode/extensions.json
+*.swp
+*.swo
+*~
+
+# --- Python ----------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# --- Node ------------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.npm/
+.next/
+.turbo/
+
+# --- Build output ----------------------------------------------------------
+dist/
+build/
+out/
+target/
+*.log
+logs/
+tmp/
+
+# --- Docker ----------------------------------------------------------------
+docker-compose.override.yml
+*.tar
+
+# --- Claude Code -----------------------------------------------------------
+# .claude/commands/ and .claude/settings.local.json are tracked on purpose so a
+# new project starts with them. Ignore per-machine Claude state only.
+.claude/*.local.md
+# Your global gitignore may ignore settings.local.json; this repo-level rule
+# overrides it so the template ships its starter permissions.
+!.claude/settings.local.json
+
+# --- Vendor installers -----------------------------------------------------
+# Too large for git (Ignition DMG is ~2 GB). Kept locally for reference only;
+# the gateway itself runs from the Docker image.
+resources/installers/

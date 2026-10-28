@@ -1,0 +1,892 @@
+{
+  "custom": {
+    "live": {},
+    "pct": {}
+  },
+  "params": {
+    "window": 15
+  },
+  "props": {
+    "defaultSize": {
+      "width": 1300,
+      "height": 900
+    }
+  },
+  "root": {
+    "type": "ia.container.flex",
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "alignItems": "stretch",
+      "style": {
+        "classes": "tab-body"
+      }
+    },
+    "position": {
+      "shrink": 0
+    },
+    "children": [
+      {
+        "type": "ia.display.view",
+        "meta": {
+          "name": "Banner"
+        },
+        "props": {
+          "path": "Press1/Parts/Banner",
+          "params": {}
+        },
+        "position": {
+          "shrink": 0,
+          "basis": "70px"
+        }
+      },
+      {
+        "type": "ia.container.flex",
+        "meta": {
+          "name": "Tiles"
+        },
+        "props": {
+          "direction": "row",
+          "alignItems": "stretch",
+          "style": {
+            "classes": "",
+            "gap": "12px"
+          },
+          "wrap": "wrap"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "children": [
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Running"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "tile"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "140px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "RunningLabel"
+                },
+                "props": {
+                  "text": "Time Running",
+                  "style": {
+                    "classes": "tile-label"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "RunningValueRow"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "baseline",
+                  "style": {
+                    "classes": "",
+                    "gap": "5px"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "RunningValue"
+                    },
+                    "props": {
+                      "text": "",
+                      "style": {
+                        "classes": "tile-value val-running"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "type": "property",
+                          "config": {
+                            "path": "view.custom.pct.running"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "RunningUnit"
+                    },
+                    "props": {
+                      "text": "%",
+                      "style": {
+                        "classes": "tile-unit"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "RunningSub"
+                },
+                "props": {
+                  "text": "",
+                  "style": {
+                    "classes": "tile-sub"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "\"last \" + {view.params.window} + \" min window\""
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Setup"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "tile"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "140px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "SetupLabel"
+                },
+                "props": {
+                  "text": "Time in Setup",
+                  "style": {
+                    "classes": "tile-label"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "SetupValueRow"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "baseline",
+                  "style": {
+                    "classes": "",
+                    "gap": "5px"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "SetupValue"
+                    },
+                    "props": {
+                      "text": "",
+                      "style": {
+                        "classes": "tile-value val-setup"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "type": "property",
+                          "config": {
+                            "path": "view.custom.pct.setup"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "SetupUnit"
+                    },
+                    "props": {
+                      "text": "%",
+                      "style": {
+                        "classes": "tile-unit"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Faulted"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "tile"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "140px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "FaultedLabel"
+                },
+                "props": {
+                  "text": "Time Faulted",
+                  "style": {
+                    "classes": "tile-label"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "FaultedValueRow"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "baseline",
+                  "style": {
+                    "classes": "",
+                    "gap": "5px"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "FaultedValue"
+                    },
+                    "props": {
+                      "text": "",
+                      "style": {
+                        "classes": "tile-value val-faulted"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "type": "property",
+                          "config": {
+                            "path": "view.custom.pct.faulted"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "FaultedUnit"
+                    },
+                    "props": {
+                      "text": "%",
+                      "style": {
+                        "classes": "tile-unit"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "ia.display.view",
+        "meta": {
+          "name": "StateTrend"
+        },
+        "props": {
+          "path": "Press1/Parts/Trend",
+          "params": {
+            "title": "Machine state  (1 Running · 2 Setup · 3 Faulted)",
+            "unit": "",
+            "keys": [
+              "state"
+            ],
+            "names": [
+              "State"
+            ],
+            "colors": [
+              "a"
+            ],
+            "min": 0.5,
+            "max": 3.5,
+            "step": true,
+            "limit": null,
+            "axisLabel": "",
+            "window": 15
+          }
+        },
+        "position": {
+          "shrink": 0,
+          "basis": "210px"
+        },
+        "propConfig": {
+          "props.params.window": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.params.window"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.container.flex",
+        "meta": {
+          "name": "Grid"
+        },
+        "props": {
+          "direction": "row",
+          "alignItems": "flex-start",
+          "style": {
+            "classes": "",
+            "gap": "14px"
+          },
+          "wrap": "wrap"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "children": [
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Summary"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "card"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "420px"
+            },
+            "children": [
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "SummaryHead_2"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "SummaryTitle"
+                    },
+                    "props": {
+                      "text": "Alarm summary",
+                      "style": {
+                        "classes": "card-title"
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "SummaryRight"
+                    },
+                    "props": {
+                      "text": "since gateway start",
+                      "style": {
+                        "classes": "card-right"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "SummaryHead"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "stretch",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Th"
+                    },
+                    "props": {
+                      "text": "Code",
+                      "style": {
+                        "classes": "th"
+                      }
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 1,
+                      "basis": "0"
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Th_2"
+                    },
+                    "props": {
+                      "text": "Alarm",
+                      "style": {
+                        "classes": "th"
+                      }
+                    },
+                    "position": {
+                      "grow": 2.5,
+                      "shrink": 1,
+                      "basis": "0"
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Th_3"
+                    },
+                    "props": {
+                      "text": "Count",
+                      "style": {
+                        "classes": "th"
+                      }
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 1,
+                      "basis": "0"
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Th_4"
+                    },
+                    "props": {
+                      "text": "Total time",
+                      "style": {
+                        "classes": "th"
+                      }
+                    },
+                    "position": {
+                      "grow": 1.5,
+                      "shrink": 1,
+                      "basis": "0"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ia.display.flex-repeater",
+                "meta": {
+                  "name": "SummaryRows"
+                },
+                "props": {
+                  "path": "Press1/Parts/AlarmRow",
+                  "direction": "column",
+                  "wrap": "nowrap",
+                  "instances": [],
+                  "useDefaultViewWidth": false,
+                  "useDefaultViewHeight": false,
+                  "elementPosition": {
+                    "grow": 0,
+                    "shrink": 0,
+                    "basis": "31px"
+                  },
+                  "style": {}
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.instances": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "now(2000)"
+                      },
+                      "transforms": [
+                        {
+                          "type": "script",
+                          "code": "\treturn press1.cells(press1.alarm_summary(), ['code', 'alarm', 'count', 'total'], '')"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Events"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "card"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "420px"
+            },
+            "children": [
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "EventsHead_2"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "center",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "EventsTitle"
+                    },
+                    "props": {
+                      "text": "Event log",
+                      "style": {
+                        "classes": "card-title"
+                      }
+                    },
+                    "position": {
+                      "grow": 1
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "EventsRight"
+                    },
+                    "props": {
+                      "text": "state changes, newest first, since gateway start",
+                      "style": {
+                        "classes": "card-right"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "EventsHead"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "stretch",
+                  "style": {
+                    "classes": ""
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Th_5"
+                    },
+                    "props": {
+                      "text": "Start",
+                      "style": {
+                        "classes": "th"
+                      }
+                    },
+                    "position": {
+                      "grow": 1.3,
+                      "shrink": 1,
+                      "basis": "0"
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Th_6"
+                    },
+                    "props": {
+                      "text": "Type",
+                      "style": {
+                        "classes": "th"
+                      }
+                    },
+                    "position": {
+                      "grow": 1,
+                      "shrink": 1,
+                      "basis": "0"
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Th_7"
+                    },
+                    "props": {
+                      "text": "Detail",
+                      "style": {
+                        "classes": "th"
+                      }
+                    },
+                    "position": {
+                      "grow": 2.6,
+                      "shrink": 1,
+                      "basis": "0"
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Th_8"
+                    },
+                    "props": {
+                      "text": "Job",
+                      "style": {
+                        "classes": "th"
+                      }
+                    },
+                    "position": {
+                      "grow": 0.8,
+                      "shrink": 1,
+                      "basis": "0"
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "Th_9"
+                    },
+                    "props": {
+                      "text": "Duration",
+                      "style": {
+                        "classes": "th"
+                      }
+                    },
+                    "position": {
+                      "grow": 1.2,
+                      "shrink": 1,
+                      "basis": "0"
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ia.display.flex-repeater",
+                "meta": {
+                  "name": "EventsRows"
+                },
+                "props": {
+                  "path": "Press1/Parts/EventRow",
+                  "direction": "column",
+                  "wrap": "nowrap",
+                  "instances": [],
+                  "useDefaultViewWidth": false,
+                  "useDefaultViewHeight": false,
+                  "elementPosition": {
+                    "grow": 0,
+                    "shrink": 0,
+                    "basis": "31px"
+                  },
+                  "style": {
+                    "overflowY": "auto"
+                  }
+                },
+                "position": {
+                  "shrink": 0,
+                  "basis": "300px"
+                },
+                "propConfig": {
+                  "props.instances": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "now(2000)"
+                      },
+                      "transforms": [
+                        {
+                          "type": "script",
+                          "code": "\treturn press1.cells(press1.events(), ['start', 'type', 'detail', 'job', 'duration'], 'No events yet. Watching for state changes...')"
+                        }
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "ia.display.label",
+        "meta": {
+          "name": "Footnote"
+        },
+        "props": {
+          "text": "Events are detected from the PLC state and fault-code registers, sampled every 2 seconds, so durations are accurate to about plus or minus 2 seconds. Setup is shown as a plain state here.",
+          "style": {
+            "classes": "note",
+            "whiteSpace": "normal"
+          }
+        },
+        "position": {
+          "shrink": 0
+        }
+      }
+    ]
+  },
+  "propConfig": {
+    "custom.live": {
+      "binding": {
+        "type": "expr",
+        "config": {
+          "expression": "now(2000)"
+        },
+        "transforms": [
+          {
+            "type": "script",
+            "code": "\treturn press1.latest()"
+          }
+        ]
+      }
+    },
+    "params.window": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "custom.pct": {
+      "binding": {
+        "type": "expr",
+        "config": {
+          "expression": "dateExtract(now(2000), \"second\") * 0 + {view.params.window}"
+        },
+        "transforms": [
+          {
+            "type": "script",
+            "code": "\treturn press1.state_percent(value)"
+          }
+        ]
+      }
+    }
+  }
+}

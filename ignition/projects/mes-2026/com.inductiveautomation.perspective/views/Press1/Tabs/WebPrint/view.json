@@ -1,0 +1,297 @@
+{
+  "custom": {
+    "live": {}
+  },
+  "params": {
+    "window": 15
+  },
+  "props": {
+    "defaultSize": {
+      "width": 1300,
+      "height": 900
+    }
+  },
+  "root": {
+    "type": "ia.container.flex",
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "alignItems": "stretch",
+      "style": {
+        "classes": "tab-body"
+      }
+    },
+    "position": {
+      "shrink": 0
+    },
+    "children": [
+      {
+        "type": "ia.display.view",
+        "meta": {
+          "name": "TensionTrend"
+        },
+        "props": {
+          "path": "Press1/Parts/Trend",
+          "params": {
+            "title": "Web tension — unwind vs rewind",
+            "unit": "",
+            "keys": [
+              "tenU",
+              "tenR"
+            ],
+            "names": [
+              "Unwind",
+              "Rewind"
+            ],
+            "colors": [
+              "a",
+              "b"
+            ],
+            "min": "",
+            "max": "",
+            "step": false,
+            "limit": null,
+            "axisLabel": "",
+            "window": 15
+          }
+        },
+        "position": {
+          "shrink": 0,
+          "basis": "260px"
+        },
+        "propConfig": {
+          "props.params.window": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.params.window"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.container.flex",
+        "meta": {
+          "name": "Grid"
+        },
+        "props": {
+          "direction": "row",
+          "alignItems": "stretch",
+          "style": {
+            "classes": "",
+            "gap": "14px"
+          },
+          "wrap": "wrap"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "children": [
+          {
+            "type": "ia.display.view",
+            "meta": {
+              "name": "SpeedTrend"
+            },
+            "props": {
+              "path": "Press1/Parts/Trend",
+              "params": {
+                "title": "Line speed",
+                "unit": "m/min",
+                "keys": [
+                  "speed"
+                ],
+                "names": [
+                  "Line speed"
+                ],
+                "colors": [
+                  "d"
+                ],
+                "min": "",
+                "max": "",
+                "step": false,
+                "limit": null,
+                "axisLabel": "",
+                "window": 15
+              },
+              "style": {
+                "height": "200px"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "420px"
+            },
+            "propConfig": {
+              "props.params.window": {
+                "binding": {
+                  "type": "property",
+                  "config": {
+                    "path": "view.params.window"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "ia.display.view",
+            "meta": {
+              "name": "RegTrend"
+            },
+            "props": {
+              "path": "Press1/Parts/Trend",
+              "params": {
+                "title": "Registration error",
+                "unit": "",
+                "keys": [
+                  "reg"
+                ],
+                "names": [
+                  "Registration error"
+                ],
+                "colors": [
+                  "e"
+                ],
+                "min": "",
+                "max": "",
+                "step": false,
+                "limit": null,
+                "axisLabel": "",
+                "window": 15
+              },
+              "style": {
+                "height": "200px"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "420px"
+            },
+            "propConfig": {
+              "props.params.window": {
+                "binding": {
+                  "type": "property",
+                  "config": {
+                    "path": "view.params.window"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "ia.display.view",
+            "meta": {
+              "name": "ViscTrend"
+            },
+            "props": {
+              "path": "Press1/Parts/Trend",
+              "params": {
+                "title": "Ink viscosity",
+                "unit": "",
+                "keys": [
+                  "visc"
+                ],
+                "names": [
+                  "Ink viscosity"
+                ],
+                "colors": [
+                  "c"
+                ],
+                "min": "",
+                "max": "",
+                "step": false,
+                "limit": null,
+                "axisLabel": "",
+                "window": 15
+              },
+              "style": {
+                "height": "200px"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "420px"
+            },
+            "propConfig": {
+              "props.params.window": {
+                "binding": {
+                  "type": "property",
+                  "config": {
+                    "path": "view.params.window"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "ia.display.view",
+        "meta": {
+          "name": "StateTrend"
+        },
+        "props": {
+          "path": "Press1/Parts/Trend",
+          "params": {
+            "title": "Machine state  (1 Running · 2 Setup · 3 Faulted)",
+            "unit": "",
+            "keys": [
+              "state"
+            ],
+            "names": [
+              "State"
+            ],
+            "colors": [
+              "a"
+            ],
+            "min": 0.5,
+            "max": 3.5,
+            "step": true,
+            "limit": null,
+            "axisLabel": "",
+            "window": 15
+          }
+        },
+        "position": {
+          "shrink": 0,
+          "basis": "210px"
+        },
+        "propConfig": {
+          "props.params.window": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.params.window"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "propConfig": {
+    "custom.live": {
+      "binding": {
+        "type": "expr",
+        "config": {
+          "expression": "now(2000)"
+        },
+        "transforms": [
+          {
+            "type": "script",
+            "code": "\treturn press1.latest()"
+          }
+        ]
+      }
+    },
+    "params.window": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  }
+}

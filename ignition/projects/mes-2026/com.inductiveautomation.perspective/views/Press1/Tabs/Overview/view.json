@@ -1,0 +1,1763 @@
+{
+  "custom": {
+    "live": {}
+  },
+  "params": {
+    "window": 15
+  },
+  "props": {
+    "defaultSize": {
+      "width": 1300,
+      "height": 900
+    }
+  },
+  "root": {
+    "type": "ia.container.flex",
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "alignItems": "stretch",
+      "style": {
+        "classes": "tab-body"
+      }
+    },
+    "position": {
+      "shrink": 0
+    },
+    "children": [
+      {
+        "type": "ia.display.view",
+        "meta": {
+          "name": "Banner"
+        },
+        "props": {
+          "path": "Press1/Parts/Banner",
+          "params": {}
+        },
+        "position": {
+          "shrink": 0,
+          "basis": "70px"
+        }
+      },
+      {
+        "type": "ia.container.flex",
+        "meta": {
+          "name": "Tiles"
+        },
+        "props": {
+          "direction": "row",
+          "alignItems": "stretch",
+          "style": {
+            "classes": "",
+            "gap": "12px"
+          },
+          "wrap": "wrap"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "children": [
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Speed"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "tile"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "140px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "SpeedLabel"
+                },
+                "props": {
+                  "text": "Line speed",
+                  "style": {
+                    "classes": "tile-label"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "SpeedValueRow"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "baseline",
+                  "style": {
+                    "classes": "",
+                    "gap": "5px"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "SpeedValue"
+                    },
+                    "props": {
+                      "text": "",
+                      "style": {
+                        "classes": "tile-value"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "type": "property",
+                          "config": {
+                            "path": "view.custom.live.speed_t"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "SpeedUnit"
+                    },
+                    "props": {
+                      "text": "m/min",
+                      "style": {
+                        "classes": "tile-unit"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Product"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "tile"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "140px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "ProductLabel"
+                },
+                "props": {
+                  "text": "Product code",
+                  "style": {
+                    "classes": "tile-label"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "ProductValueRow"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "baseline",
+                  "style": {
+                    "classes": "",
+                    "gap": "5px"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "ProductValue"
+                    },
+                    "props": {
+                      "text": "",
+                      "style": {
+                        "classes": "tile-value"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "type": "property",
+                          "config": {
+                            "path": "view.custom.live.product_t"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "ProductSub"
+                },
+                "props": {
+                  "text": "raw PLC register",
+                  "style": {
+                    "classes": "tile-sub"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Lanes"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "tile"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "140px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "LanesLabel"
+                },
+                "props": {
+                  "text": "Web lanes",
+                  "style": {
+                    "classes": "tile-label"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "LanesValueRow"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "baseline",
+                  "style": {
+                    "classes": "",
+                    "gap": "5px"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "LanesValue"
+                    },
+                    "props": {
+                      "text": "",
+                      "style": {
+                        "classes": "tile-value"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "type": "property",
+                          "config": {
+                            "path": "view.custom.live.lanes_t"
+                          }
+                        }
+                      }
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Good"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "tile"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "140px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "GoodLabel"
+                },
+                "props": {
+                  "text": "Good meters",
+                  "style": {
+                    "classes": "tile-label"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "GoodValueRow"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "baseline",
+                  "style": {
+                    "classes": "",
+                    "gap": "5px"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "GoodValue"
+                    },
+                    "props": {
+                      "text": "",
+                      "style": {
+                        "classes": "tile-value"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "type": "property",
+                          "config": {
+                            "path": "view.custom.live.good_t"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "GoodUnit"
+                    },
+                    "props": {
+                      "text": "m",
+                      "style": {
+                        "classes": "tile-unit"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "GoodSub"
+                },
+                "props": {
+                  "text": "cumulative since sim start",
+                  "style": {
+                    "classes": "tile-sub"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Reject"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "tile"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "140px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "RejectLabel"
+                },
+                "props": {
+                  "text": "Reject meters",
+                  "style": {
+                    "classes": "tile-label"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "RejectValueRow"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "baseline",
+                  "style": {
+                    "classes": "",
+                    "gap": "5px"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "RejectValue"
+                    },
+                    "props": {
+                      "text": "",
+                      "style": {
+                        "classes": "tile-value"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "type": "property",
+                          "config": {
+                            "path": "view.custom.live.reject_t"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "RejectUnit"
+                    },
+                    "props": {
+                      "text": "m",
+                      "style": {
+                        "classes": "tile-unit"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Scrap"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "tile"
+              }
+            },
+            "position": {
+              "grow": 1,
+              "shrink": 0,
+              "basis": "140px"
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "ScrapLabel"
+                },
+                "props": {
+                  "text": "Scrap (cumulative)",
+                  "style": {
+                    "classes": "tile-label"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "ScrapValueRow"
+                },
+                "props": {
+                  "direction": "row",
+                  "alignItems": "baseline",
+                  "style": {
+                    "classes": "",
+                    "gap": "5px"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "ScrapValue"
+                    },
+                    "props": {
+                      "text": "",
+                      "style": {
+                        "classes": "tile-value"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "propConfig": {
+                      "props.text": {
+                        "binding": {
+                          "type": "property",
+                          "config": {
+                            "path": "view.custom.live.scrap_t"
+                          }
+                        }
+                      },
+                      "props.style.classes": {
+                        "binding": {
+                          "type": "expr",
+                          "config": {
+                            "expression": "\"tile-value \" + {view.custom.live.scrap_cls}"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "ScrapUnit"
+                    },
+                    "props": {
+                      "text": "%",
+                      "style": {
+                        "classes": "tile-unit"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  }
+                ]
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "ScrapSub"
+                },
+                "props": {
+                  "text": "rejects / (good + rejects)",
+                  "style": {
+                    "classes": "tile-sub"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "ia.container.flex",
+        "meta": {
+          "name": "Mimic"
+        },
+        "props": {
+          "direction": "column",
+          "alignItems": "stretch",
+          "style": {
+            "classes": "card"
+          }
+        },
+        "position": {
+          "shrink": 0
+        },
+        "children": [
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "MimicHead"
+            },
+            "props": {
+              "direction": "row",
+              "alignItems": "center",
+              "style": {
+                "classes": ""
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "MimicTitle"
+                },
+                "props": {
+                  "text": "Press 1 process flow",
+                  "style": {
+                    "classes": "card-title"
+                  }
+                },
+                "position": {
+                  "grow": 1
+                }
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "MimicRight"
+                },
+                "props": {
+                  "text": "web path, left to right",
+                  "style": {
+                    "classes": "card-right"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Flow"
+            },
+            "props": {
+              "direction": "row",
+              "alignItems": "stretch",
+              "style": {
+                "classes": "",
+                "gap": "10px"
+              },
+              "wrap": "wrap"
+            },
+            "position": {
+              "shrink": 0
+            },
+            "children": [
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "Unwind"
+                },
+                "props": {
+                  "direction": "column",
+                  "alignItems": "stretch",
+                  "style": {
+                    "classes": "section"
+                  }
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0,
+                  "basis": "190px"
+                },
+                "propConfig": {
+                  "props.style.classes": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "\"section \" + {view.custom.live.unwind_cls}"
+                      }
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "UnwindTitle"
+                    },
+                    "props": {
+                      "text": "Unwind",
+                      "style": {
+                        "classes": "section-title"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  },
+                  {
+                    "type": "ia.container.flex",
+                    "meta": {
+                      "name": "TenU"
+                    },
+                    "props": {
+                      "direction": "row",
+                      "alignItems": "baseline",
+                      "style": {
+                        "classes": "row"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "children": [
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "TenULabel"
+                        },
+                        "props": {
+                          "text": "Web tension",
+                          "style": {
+                            "classes": "row-label"
+                          }
+                        },
+                        "position": {
+                          "grow": 1
+                        }
+                      },
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "TenUValue"
+                        },
+                        "props": {
+                          "text": "",
+                          "style": {
+                            "classes": "row-val"
+                          }
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "type": "property",
+                              "config": {
+                                "path": "view.custom.live.tenU_t"
+                              }
+                            }
+                          },
+                          "props.style.classes": {
+                            "binding": {
+                              "type": "expr",
+                              "config": {
+                                "expression": "{view.custom.live.tension_cls}"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "TenUUnit"
+                        },
+                        "props": {
+                          "text": "lbf",
+                          "style": {
+                            "classes": "row-unit"
+                          }
+                        },
+                        "position": {
+                          "shrink": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "Arrow"
+                },
+                "props": {
+                  "text": "▶",
+                  "style": {
+                    "classes": "arrow",
+                    "alignSelf": "center"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "Print"
+                },
+                "props": {
+                  "direction": "column",
+                  "alignItems": "stretch",
+                  "style": {
+                    "classes": "section"
+                  }
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0,
+                  "basis": "190px"
+                },
+                "propConfig": {
+                  "props.style.classes": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "\"section \" + {view.custom.live.print_cls}"
+                      }
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "PrintTitle"
+                    },
+                    "props": {
+                      "text": "Print section (8 colors)",
+                      "style": {
+                        "classes": "section-title"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  },
+                  {
+                    "type": "ia.container.flex",
+                    "meta": {
+                      "name": "LineSpeed"
+                    },
+                    "props": {
+                      "direction": "row",
+                      "alignItems": "baseline",
+                      "style": {
+                        "classes": "row"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "children": [
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "LineSpeedLabel"
+                        },
+                        "props": {
+                          "text": "Line speed",
+                          "style": {
+                            "classes": "row-label"
+                          }
+                        },
+                        "position": {
+                          "grow": 1
+                        }
+                      },
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "LineSpeedValue"
+                        },
+                        "props": {
+                          "text": "",
+                          "style": {
+                            "classes": "row-val"
+                          }
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "type": "property",
+                              "config": {
+                                "path": "view.custom.live.speed_t"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "LineSpeedUnit"
+                        },
+                        "props": {
+                          "text": "m/min",
+                          "style": {
+                            "classes": "row-unit"
+                          }
+                        },
+                        "position": {
+                          "shrink": 0
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ia.container.flex",
+                    "meta": {
+                      "name": "Reg"
+                    },
+                    "props": {
+                      "direction": "row",
+                      "alignItems": "baseline",
+                      "style": {
+                        "classes": "row"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "children": [
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "RegLabel"
+                        },
+                        "props": {
+                          "text": "Registration error",
+                          "style": {
+                            "classes": "row-label"
+                          }
+                        },
+                        "position": {
+                          "grow": 1
+                        }
+                      },
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "RegValue"
+                        },
+                        "props": {
+                          "text": "",
+                          "style": {
+                            "classes": "row-val"
+                          }
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "type": "property",
+                              "config": {
+                                "path": "view.custom.live.reg_t"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "RegUnit"
+                        },
+                        "props": {
+                          "text": "mm",
+                          "style": {
+                            "classes": "row-unit"
+                          }
+                        },
+                        "position": {
+                          "shrink": 0
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ia.container.flex",
+                    "meta": {
+                      "name": "Visc"
+                    },
+                    "props": {
+                      "direction": "row",
+                      "alignItems": "baseline",
+                      "style": {
+                        "classes": "row"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "children": [
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "ViscLabel"
+                        },
+                        "props": {
+                          "text": "Ink viscosity",
+                          "style": {
+                            "classes": "row-label"
+                          }
+                        },
+                        "position": {
+                          "grow": 1
+                        }
+                      },
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "ViscValue"
+                        },
+                        "props": {
+                          "text": "",
+                          "style": {
+                            "classes": "row-val"
+                          }
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "type": "property",
+                              "config": {
+                                "path": "view.custom.live.visc_t"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "ViscUnit"
+                        },
+                        "props": {
+                          "text": "s",
+                          "style": {
+                            "classes": "row-unit"
+                          }
+                        },
+                        "position": {
+                          "shrink": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "Arrow_2"
+                },
+                "props": {
+                  "text": "▶",
+                  "style": {
+                    "classes": "arrow",
+                    "alignSelf": "center"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "Dryer"
+                },
+                "props": {
+                  "direction": "column",
+                  "alignItems": "stretch",
+                  "style": {
+                    "classes": "section"
+                  }
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0,
+                  "basis": "190px"
+                },
+                "propConfig": {
+                  "props.style.classes": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "\"section \" + {view.custom.live.dryer_cls}"
+                      }
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "DryerTitle"
+                    },
+                    "props": {
+                      "text": "Tunnel dryer (hot air)",
+                      "style": {
+                        "classes": "section-title"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  },
+                  {
+                    "type": "ia.container.flex",
+                    "meta": {
+                      "name": "Z1"
+                    },
+                    "props": {
+                      "direction": "row",
+                      "alignItems": "baseline",
+                      "style": {
+                        "classes": "row"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "children": [
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "Z1Label"
+                        },
+                        "props": {
+                          "text": "Zone 1",
+                          "style": {
+                            "classes": "row-label"
+                          }
+                        },
+                        "position": {
+                          "grow": 1
+                        }
+                      },
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "Z1Value"
+                        },
+                        "props": {
+                          "text": "",
+                          "style": {
+                            "classes": "row-val"
+                          }
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "type": "property",
+                              "config": {
+                                "path": "view.custom.live.z1_t"
+                              }
+                            }
+                          },
+                          "props.style.classes": {
+                            "binding": {
+                              "type": "expr",
+                              "config": {
+                                "expression": "{view.custom.live.z1_cls}"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "Z1Unit"
+                        },
+                        "props": {
+                          "text": "°F",
+                          "style": {
+                            "classes": "row-unit"
+                          }
+                        },
+                        "position": {
+                          "shrink": 0
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ia.container.flex",
+                    "meta": {
+                      "name": "Z2"
+                    },
+                    "props": {
+                      "direction": "row",
+                      "alignItems": "baseline",
+                      "style": {
+                        "classes": "row"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "children": [
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "Z2Label"
+                        },
+                        "props": {
+                          "text": "Zone 2",
+                          "style": {
+                            "classes": "row-label"
+                          }
+                        },
+                        "position": {
+                          "grow": 1
+                        }
+                      },
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "Z2Value"
+                        },
+                        "props": {
+                          "text": "",
+                          "style": {
+                            "classes": "row-val"
+                          }
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "type": "property",
+                              "config": {
+                                "path": "view.custom.live.z2_t"
+                              }
+                            }
+                          },
+                          "props.style.classes": {
+                            "binding": {
+                              "type": "expr",
+                              "config": {
+                                "expression": "{view.custom.live.z2_cls}"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "Z2Unit"
+                        },
+                        "props": {
+                          "text": "°F",
+                          "style": {
+                            "classes": "row-unit"
+                          }
+                        },
+                        "position": {
+                          "shrink": 0
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "type": "ia.container.flex",
+                    "meta": {
+                      "name": "Z3"
+                    },
+                    "props": {
+                      "direction": "row",
+                      "alignItems": "baseline",
+                      "style": {
+                        "classes": "row"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "children": [
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "Z3Label"
+                        },
+                        "props": {
+                          "text": "Zone 3",
+                          "style": {
+                            "classes": "row-label"
+                          }
+                        },
+                        "position": {
+                          "grow": 1
+                        }
+                      },
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "Z3Value"
+                        },
+                        "props": {
+                          "text": "",
+                          "style": {
+                            "classes": "row-val"
+                          }
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "type": "property",
+                              "config": {
+                                "path": "view.custom.live.z3_t"
+                              }
+                            }
+                          },
+                          "props.style.classes": {
+                            "binding": {
+                              "type": "expr",
+                              "config": {
+                                "expression": "{view.custom.live.z3_cls}"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "Z3Unit"
+                        },
+                        "props": {
+                          "text": "°F",
+                          "style": {
+                            "classes": "row-unit"
+                          }
+                        },
+                        "position": {
+                          "shrink": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "Arrow_3"
+                },
+                "props": {
+                  "text": "▶",
+                  "style": {
+                    "classes": "arrow",
+                    "alignSelf": "center"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.container.flex",
+                "meta": {
+                  "name": "Rewind"
+                },
+                "props": {
+                  "direction": "column",
+                  "alignItems": "stretch",
+                  "style": {
+                    "classes": "section"
+                  }
+                },
+                "position": {
+                  "grow": 1,
+                  "shrink": 0,
+                  "basis": "190px"
+                },
+                "propConfig": {
+                  "props.style.classes": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "\"section \" + {view.custom.live.rewind_cls}"
+                      }
+                    }
+                  }
+                },
+                "children": [
+                  {
+                    "type": "ia.display.label",
+                    "meta": {
+                      "name": "RewindTitle"
+                    },
+                    "props": {
+                      "text": "Rewind",
+                      "style": {
+                        "classes": "section-title"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    }
+                  },
+                  {
+                    "type": "ia.container.flex",
+                    "meta": {
+                      "name": "TenR"
+                    },
+                    "props": {
+                      "direction": "row",
+                      "alignItems": "baseline",
+                      "style": {
+                        "classes": "row"
+                      }
+                    },
+                    "position": {
+                      "shrink": 0
+                    },
+                    "children": [
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "TenRLabel"
+                        },
+                        "props": {
+                          "text": "Web tension",
+                          "style": {
+                            "classes": "row-label"
+                          }
+                        },
+                        "position": {
+                          "grow": 1
+                        }
+                      },
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "TenRValue"
+                        },
+                        "props": {
+                          "text": "",
+                          "style": {
+                            "classes": "row-val"
+                          }
+                        },
+                        "position": {
+                          "shrink": 0
+                        },
+                        "propConfig": {
+                          "props.text": {
+                            "binding": {
+                              "type": "property",
+                              "config": {
+                                "path": "view.custom.live.tenR_t"
+                              }
+                            }
+                          },
+                          "props.style.classes": {
+                            "binding": {
+                              "type": "expr",
+                              "config": {
+                                "expression": "{view.custom.live.tension_cls}"
+                              }
+                            }
+                          }
+                        }
+                      },
+                      {
+                        "type": "ia.display.label",
+                        "meta": {
+                          "name": "TenRUnit"
+                        },
+                        "props": {
+                          "text": "lbf",
+                          "style": {
+                            "classes": "row-unit"
+                          }
+                        },
+                        "position": {
+                          "shrink": 0
+                        }
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Rto"
+            },
+            "props": {
+              "direction": "row",
+              "alignItems": "center",
+              "style": {
+                "classes": "",
+                "gap": "10px",
+                "marginTop": "10px"
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "RtoLabel"
+                },
+                "props": {
+                  "text": "RTO (oxidizer) permissive to press:",
+                  "style": {
+                    "classes": "muted"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "RtoPill"
+                },
+                "props": {
+                  "text": "",
+                  "style": {
+                    "classes": "pill"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "type": "property",
+                      "config": {
+                        "path": "view.custom.live.rto_permissive"
+                      }
+                    }
+                  },
+                  "props.style.classes": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "\"pill \" + {view.custom.live.rto_cls}"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "ia.display.view",
+        "meta": {
+          "name": "StateTrend"
+        },
+        "props": {
+          "path": "Press1/Parts/Trend",
+          "params": {
+            "title": "Machine state  (1 Running · 2 Setup · 3 Faulted)",
+            "unit": "",
+            "keys": [
+              "state"
+            ],
+            "names": [
+              "State"
+            ],
+            "colors": [
+              "a"
+            ],
+            "min": 0.5,
+            "max": 3.5,
+            "step": true,
+            "limit": null,
+            "axisLabel": "",
+            "window": 15
+          }
+        },
+        "position": {
+          "shrink": 0,
+          "basis": "210px"
+        },
+        "propConfig": {
+          "props.params.window": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.params.window"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.view",
+        "meta": {
+          "name": "SpeedTrend"
+        },
+        "props": {
+          "path": "Press1/Parts/Trend",
+          "params": {
+            "title": "Line speed",
+            "unit": "m/min",
+            "keys": [
+              "speed"
+            ],
+            "names": [
+              "Line speed"
+            ],
+            "colors": [
+              "a"
+            ],
+            "min": "",
+            "max": "",
+            "step": false,
+            "limit": null,
+            "axisLabel": "",
+            "window": 15
+          }
+        },
+        "position": {
+          "shrink": 0,
+          "basis": "240px"
+        },
+        "propConfig": {
+          "props.params.window": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.params.window"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "propConfig": {
+    "custom.live": {
+      "binding": {
+        "type": "expr",
+        "config": {
+          "expression": "now(2000)"
+        },
+        "transforms": [
+          {
+            "type": "script",
+            "code": "\treturn press1.latest()"
+          }
+        ]
+      }
+    },
+    "params.window": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  }
+}

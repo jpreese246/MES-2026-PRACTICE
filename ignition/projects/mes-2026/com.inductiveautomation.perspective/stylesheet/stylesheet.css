@@ -1,0 +1,115 @@
+/* mes-2026 -- Press 1 SCADA view (VIS-001).
+ *
+ * Every colour is defined once, here, as a custom property; views carry bare class names
+ * only. Perspective prepends "psc-" to style.classes itself, so views say "tile" and this
+ * file says ".psc-tile". Colours copy the UNS Studio reference dashboard.
+ */
+
+:root {
+  --p1-bg:        #0f141a;
+  --p1-surface:   #161d25;
+  --p1-surface-2: #1d2630;
+  --p1-border:    #2a3541;
+  --p1-text:      #e8eef5;
+  --p1-text-2:    #b4c0cd;
+  --p1-muted:     #7d8a99;
+
+  --p1-running:   #22c55e;
+  --p1-setup:     #f59e0b;
+  --p1-faulted:   #ef4444;
+  --p1-unknown:   #64748b;
+  --p1-accent:    #4DB8D5;
+  --p1-brand:     #1f6f86;
+
+  /* trend series, in the reference's order */
+  --p1-series-a:  #4DB8D5;
+  --p1-series-b:  #f59e0b;
+  --p1-series-c:  #a78bfa;
+  --p1-series-d:  #22c55e;
+  --p1-series-e:  #ef4444;
+}
+
+/* ---------- shell ---------- */
+.psc-shell { background: var(--p1-bg); color: var(--p1-text); padding: 14px 18px; font-family: Inter, "Segoe UI", Roboto, sans-serif; }
+.psc-header { padding-bottom: 10px; border-bottom: 2px solid var(--p1-accent); }
+.psc-title { font-size: 24px; font-weight: 800; color: var(--p1-text); }
+.psc-subtitle { font-size: 12px; color: var(--p1-muted); }
+.psc-clock { font-size: 18px; font-weight: 700; color: var(--p1-text); font-variant-numeric: tabular-nums; }
+.psc-clock-date { font-size: 11px; color: var(--p1-muted); }
+.psc-footer { margin-top: 12px; padding-top: 8px; border-top: 1px solid var(--p1-border); font-size: 11px; color: var(--p1-muted); }
+.psc-muted { font-size: 12px; color: var(--p1-muted); }
+.psc-note { font-size: 12px; color: var(--p1-muted); }
+
+/* ---------- tab bar and window selector ---------- */
+.psc-tab { background: var(--p1-surface) !important; color: var(--p1-text-2) !important; border: 1px solid var(--p1-border) !important;
+  border-radius: 6px !important; padding: 8px 18px !important; font-size: 14px !important; font-weight: 600 !important; height: auto !important; box-shadow: none !important; }
+.psc-tab-on { background: var(--p1-brand) !important; color: #ffffff !important; border-color: var(--p1-accent) !important; }
+.psc-win { background: transparent !important; color: var(--p1-muted) !important; border: 1px solid var(--p1-border) !important;
+  border-radius: 4px !important; padding: 4px 10px !important; font-size: 12px !important; height: auto !important; box-shadow: none !important; }
+.psc-win-on { background: var(--p1-surface-2) !important; color: var(--p1-accent) !important; border-color: var(--p1-accent) !important; }
+
+.psc-tab-body { gap: 14px; overflow-y: auto; padding-right: 4px; }
+
+/* ---------- cards, tiles ---------- */
+.psc-card { background: var(--p1-surface); border: 1px solid var(--p1-border); border-radius: 8px; padding: 14px; }
+.psc-card-title { font-size: 13px; font-weight: 700; color: var(--p1-text); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
+.psc-card-right { font-size: 11px; color: var(--p1-muted); margin-bottom: 10px; }
+
+.psc-tile { background: var(--p1-surface); border: 1px solid var(--p1-border); border-radius: 8px; padding: 12px 14px; min-width: 140px; }
+.psc-tile-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.5px; color: var(--p1-muted); font-weight: 700; }
+.psc-tile-value { font-size: 30px; font-weight: 800; margin-top: 4px; color: var(--p1-text); line-height: 1.1; }
+.psc-tile-unit { font-size: 13px; color: var(--p1-muted); font-weight: 500; }
+.psc-tile-sub { font-size: 11px; color: var(--p1-muted); margin-top: 3px; }
+.psc-val { }
+.psc-val-warn { color: var(--p1-setup) !important; }
+.psc-val-running { color: var(--p1-running) !important; }
+.psc-val-setup { color: var(--p1-setup) !important; }
+.psc-val-faulted { color: var(--p1-faulted) !important; }
+
+/* ---------- pills ---------- */
+.psc-pill { display: inline-flex !important; flex-direction: row !important; align-items: center !important; align-self: center; gap: 8px; padding: 3px 10px; border-radius: 20px; font-weight: 700; font-size: 12px; white-space: nowrap; }
+.psc-pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.psc-pill-good { color: var(--p1-running); border: 1.5px solid var(--p1-running); background: color-mix(in srgb, var(--p1-running) 13%, transparent); }
+.psc-pill-bad { color: var(--p1-faulted); border: 1.5px solid var(--p1-faulted); background: color-mix(in srgb, var(--p1-faulted) 13%, transparent); }
+
+/* ---------- state banner ---------- */
+.psc-banner { border-radius: 8px; padding: 14px 20px; gap: 20px; border: 2px solid var(--p1-unknown); background: color-mix(in srgb, var(--p1-unknown) 12%, transparent); }
+.psc-banner.psc-state-1 { border-color: var(--p1-running); background: color-mix(in srgb, var(--p1-running) 12%, transparent); }
+.psc-banner.psc-state-2 { border-color: var(--p1-setup); background: color-mix(in srgb, var(--p1-setup) 12%, transparent); }
+.psc-banner.psc-state-3 { border-color: var(--p1-faulted); background: color-mix(in srgb, var(--p1-faulted) 12%, transparent); }
+.psc-banner-text { font-size: 24px; font-weight: 800; color: var(--p1-unknown); }
+.psc-state-1 .psc-banner-text { color: var(--p1-running); }
+.psc-state-2 .psc-banner-text { color: var(--p1-setup); }
+.psc-state-3 .psc-banner-text { color: var(--p1-faulted); }
+.psc-banner-job { font-size: 14px; color: var(--p1-text-2); }
+
+/* ---------- process flow ---------- */
+.psc-section { background: var(--p1-surface-2); border: 1px solid var(--p1-border); border-top: 4px solid var(--p1-accent); border-radius: 8px; padding: 12px 14px; min-width: 190px; }
+.psc-section-state-0 { border-top-color: var(--p1-accent); }
+.psc-section-state-1 { border-top-color: var(--p1-running); }
+.psc-section-state-2 { border-top-color: var(--p1-setup); }
+.psc-section-state-3 { border-top-color: var(--p1-faulted); }
+.psc-section-fault { border-top-color: var(--p1-faulted); }
+.psc-section-title { font-size: 13px; font-weight: 700; color: var(--p1-text); margin-bottom: 8px; }
+.psc-row { padding: 3px 0; border-bottom: 1px dashed var(--p1-border); gap: 3px; }
+.psc-row-label { font-size: 12px; color: var(--p1-muted); }
+.psc-row-val { font-size: 16px; font-weight: 700; color: var(--p1-text); }
+.psc-row-val-bad { font-size: 16px; font-weight: 700; color: var(--p1-faulted); }
+.psc-row-unit { font-size: 11px; color: var(--p1-muted); }
+.psc-arrow { font-size: 26px; color: var(--p1-muted); }
+
+/* ---------- tunnel dryer zone bars ---------- */
+.psc-zone-val { font-size: 34px; font-weight: 800; color: var(--p1-running); }
+.psc-zone-val-bad { font-size: 34px; font-weight: 800; color: var(--p1-faulted); }
+.psc-zone-unit { font-size: 14px; color: var(--p1-muted); }
+.psc-zone-track { position: relative; height: 12px; background: var(--p1-surface-2); border-radius: 6px; }
+.psc-zone-limit { position: absolute; left: 80%; top: -3px; bottom: -3px; width: 2px; background: var(--p1-faulted); }
+.psc-bar-good { height: 100%; background: var(--p1-running); border-radius: 6px; }
+.psc-bar-bad { height: 100%; background: var(--p1-faulted); border-radius: 6px; }
+.psc-scale { font-size: 10px; color: var(--p1-muted); margin-top: 4px; }
+
+/* ---------- tables ---------- */
+.psc-th { font-size: 11px; text-transform: uppercase; color: var(--p1-muted); padding: 6px 10px; border-bottom: 1px solid var(--p1-border); }
+.psc-td { font-size: 13px; color: var(--p1-text); padding: 6px 10px; border-bottom: 1px solid var(--p1-border); }
+.psc-td-alarm { font-size: 13px; color: var(--p1-faulted); font-weight: 700; padding: 6px 10px; border-bottom: 1px solid var(--p1-border); }
+.psc-td-setup { font-size: 13px; color: var(--p1-setup); font-weight: 700; padding: 6px 10px; border-bottom: 1px solid var(--p1-border); }

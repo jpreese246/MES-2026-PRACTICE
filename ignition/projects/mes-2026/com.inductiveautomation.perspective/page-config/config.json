@@ -1,0 +1,10 @@
+{
+  "pages": {
+    "/press1": {
+      "viewPath": "Press1/Main",
+      "title": "4.0 Printing — Press 1",
+      "docks": {}
+    }
+  },
+  "sharedDocks": {}
+}

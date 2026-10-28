@@ -1,0 +1,258 @@
+{
+  "custom": {
+    "data": {}
+  },
+  "params": {
+    "title": "",
+    "unit": "",
+    "keys": [],
+    "names": [],
+    "colors": [],
+    "min": "",
+    "max": "",
+    "step": false,
+    "limit": null,
+    "axisLabel": "",
+    "window": 15
+  },
+  "props": {
+    "defaultSize": {
+      "width": 900,
+      "height": 220
+    }
+  },
+  "root": {
+    "type": "ia.container.flex",
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "alignItems": "stretch",
+      "style": {
+        "classes": "card",
+        "height": "100%"
+      }
+    },
+    "position": {
+      "shrink": 0
+    },
+    "children": [
+      {
+        "type": "ia.container.flex",
+        "meta": {
+          "name": "Head"
+        },
+        "props": {
+          "direction": "row",
+          "alignItems": "center",
+          "style": {
+            "classes": ""
+          }
+        },
+        "position": {
+          "shrink": 0
+        },
+        "children": [
+          {
+            "type": "ia.display.label",
+            "meta": {
+              "name": "Title"
+            },
+            "props": {
+              "text": "",
+              "style": {
+                "classes": "card-title"
+              }
+            },
+            "position": {
+              "grow": 1
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "type": "property",
+                  "config": {
+                    "path": "view.params.title"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "ia.display.label",
+            "meta": {
+              "name": "Right"
+            },
+            "props": {
+              "text": "",
+              "style": {
+                "classes": "card-right"
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "type": "expr",
+                  "config": {
+                    "expression": "if({view.params.unit} = \"\", \"\", {view.params.unit} + \" · \") + {view.custom.data.footer}"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "ia.chart.timeseries",
+        "meta": {
+          "name": "Chart"
+        },
+        "props": {
+          "enablePanZoom": false,
+          "series": [],
+          "plots": [],
+          "title": {
+            "visible": false
+          },
+          "timeRange": {
+            "visible": false
+          },
+          "legend": {
+            "visible": false,
+            "position": "top"
+          },
+          "timeAxis": {
+            "visible": true,
+            "color": "var(--p1-border)",
+            "tick": {
+              "color": "var(--p1-border)",
+              "label": {
+                "format": "HH:mm:ss",
+                "font": {
+                  "color": "var(--p1-muted)",
+                  "size": 11
+                }
+              }
+            }
+          },
+          "xTrace": {
+            "infoBox": {
+              "timeFormat": "HH:mm:ss",
+              "dateFormat": ""
+            }
+          },
+          "style": {
+            "classes": "chart"
+          }
+        },
+        "position": {
+          "grow": 1,
+          "shrink": 1,
+          "basis": "0"
+        },
+        "propConfig": {
+          "props.series": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.custom.data.series"
+              }
+            }
+          },
+          "props.plots": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.params.names"
+              },
+              "transforms": [
+                {
+                  "type": "script",
+                  "code": "\treturn press1.plots(self.view.params)"
+                }
+              ]
+            }
+          },
+          "props.legend.visible": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.params.keys"
+              },
+              "transforms": [
+                {
+                  "type": "script",
+                  "code": "\ttry:\n\t\treturn len(list(value)) > 1\n\texcept:\n\t\timport traceback\n\t\tsystem.util.getLogger(\"press1\").error(\"legend: \" + traceback.format_exc())\n\t\treturn False"
+                }
+              ]
+            }
+          }
+        }
+      }
+    ]
+  },
+  "propConfig": {
+    "custom.data": {
+      "binding": {
+        "type": "expr",
+        "config": {
+          "expression": "dateExtract(now(2000), \"second\") * 0 + {view.params.window}"
+        },
+        "transforms": [
+          {
+            "type": "script",
+            "code": "\tp = self.view.params\n\treturn press1.trend(value, list(p[\"keys\"]), list(p[\"names\"]))"
+          }
+        ]
+      }
+    },
+    "params.title": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.unit": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.keys": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.names": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.colors": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.min": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.max": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.step": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.limit": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.axisLabel": {
+      "paramDirection": "input",
+      "persistent": true
+    },
+    "params.window": {
+      "paramDirection": "input",
+      "persistent": true
+    }
+  }
+}

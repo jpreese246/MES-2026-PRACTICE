@@ -1,0 +1,687 @@
+{
+  "custom": {
+    "tab": "Overview",
+    "window": 15,
+    "live": {}
+  },
+  "params": {},
+  "props": {},
+  "root": {
+    "type": "ia.container.flex",
+    "meta": {
+      "name": "root"
+    },
+    "props": {
+      "direction": "column",
+      "alignItems": "stretch",
+      "style": {
+        "classes": "shell"
+      }
+    },
+    "position": {
+      "shrink": 0
+    },
+    "children": [
+      {
+        "type": "ia.container.flex",
+        "meta": {
+          "name": "Header"
+        },
+        "props": {
+          "direction": "row",
+          "alignItems": "center",
+          "style": {
+            "classes": "header",
+            "gap": "12px"
+          },
+          "wrap": "wrap"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "children": [
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "TitleBlock"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "stretch",
+              "style": {
+                "classes": ""
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "Title"
+                },
+                "props": {
+                  "text": "4.0 Printing — Press 1",
+                  "style": {
+                    "classes": "title"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "Subtitle"
+                },
+                "props": {
+                  "text": "Dallas · Press Room · flexographic, 8 color, hot-air tunnel dryer · raw PLC data (SCADA view)",
+                  "style": {
+                    "classes": "subtitle"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                }
+              }
+            ]
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Spacer"
+            },
+            "props": {
+              "direction": "row",
+              "alignItems": "stretch",
+              "style": {
+                "classes": ""
+              }
+            },
+            "position": {
+              "grow": 1
+            },
+            "children": []
+          },
+          {
+            "type": "ia.display.label",
+            "meta": {
+              "name": "LivePill"
+            },
+            "props": {
+              "text": "",
+              "style": {
+                "classes": "pill"
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.text": {
+                "binding": {
+                  "type": "property",
+                  "config": {
+                    "path": "view.custom.live.live_text"
+                  }
+                }
+              },
+              "props.style.classes": {
+                "binding": {
+                  "type": "expr",
+                  "config": {
+                    "expression": "\"pill \" + {view.custom.live.live_cls}"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Clock"
+            },
+            "props": {
+              "direction": "column",
+              "alignItems": "flex-end",
+              "style": {
+                "classes": ""
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "children": [
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "Time"
+                },
+                "props": {
+                  "text": "",
+                  "style": {
+                    "classes": "clock"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "dateFormat(now(1000), \"HH:mm:ss\")"
+                      }
+                    }
+                  }
+                }
+              },
+              {
+                "type": "ia.display.label",
+                "meta": {
+                  "name": "Date"
+                },
+                "props": {
+                  "text": "",
+                  "style": {
+                    "classes": "clock-date"
+                  }
+                },
+                "position": {
+                  "shrink": 0
+                },
+                "propConfig": {
+                  "props.text": {
+                    "binding": {
+                      "type": "expr",
+                      "config": {
+                        "expression": "dateFormat(now(1000), \"EEE MMM d\")"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "type": "ia.container.flex",
+        "meta": {
+          "name": "TabBar"
+        },
+        "props": {
+          "direction": "row",
+          "alignItems": "center",
+          "style": {
+            "classes": "",
+            "gap": "6px",
+            "margin": "12px 0"
+          },
+          "wrap": "wrap"
+        },
+        "position": {
+          "shrink": 0
+        },
+        "children": [
+          {
+            "type": "ia.input.button",
+            "meta": {
+              "name": "Tab"
+            },
+            "props": {
+              "text": "Overview",
+              "style": {
+                "classes": "tab"
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "type": "expr",
+                  "config": {
+                    "expression": "if({view.custom.tab} = \"Overview\", \"tab tab-on\", \"tab\")"
+                  }
+                }
+              }
+            },
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script",
+                  "scope": "G",
+                  "config": {
+                    "script": "\tself.view.custom.tab = \"Overview\""
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "ia.input.button",
+            "meta": {
+              "name": "Tab_2"
+            },
+            "props": {
+              "text": "Tunnel Dryer",
+              "style": {
+                "classes": "tab"
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "type": "expr",
+                  "config": {
+                    "expression": "if({view.custom.tab} = \"Tunnel Dryer\", \"tab tab-on\", \"tab\")"
+                  }
+                }
+              }
+            },
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script",
+                  "scope": "G",
+                  "config": {
+                    "script": "\tself.view.custom.tab = \"Tunnel Dryer\""
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "ia.input.button",
+            "meta": {
+              "name": "Tab_3"
+            },
+            "props": {
+              "text": "Web & Print",
+              "style": {
+                "classes": "tab"
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "type": "expr",
+                  "config": {
+                    "expression": "if({view.custom.tab} = \"Web & Print\", \"tab tab-on\", \"tab\")"
+                  }
+                }
+              }
+            },
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script",
+                  "scope": "G",
+                  "config": {
+                    "script": "\tself.view.custom.tab = \"Web & Print\""
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "ia.input.button",
+            "meta": {
+              "name": "Tab_4"
+            },
+            "props": {
+              "text": "Production",
+              "style": {
+                "classes": "tab"
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "type": "expr",
+                  "config": {
+                    "expression": "if({view.custom.tab} = \"Production\", \"tab tab-on\", \"tab\")"
+                  }
+                }
+              }
+            },
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script",
+                  "scope": "G",
+                  "config": {
+                    "script": "\tself.view.custom.tab = \"Production\""
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "ia.input.button",
+            "meta": {
+              "name": "Tab_5"
+            },
+            "props": {
+              "text": "Alarms & State",
+              "style": {
+                "classes": "tab"
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "type": "expr",
+                  "config": {
+                    "expression": "if({view.custom.tab} = \"Alarms & State\", \"tab tab-on\", \"tab\")"
+                  }
+                }
+              }
+            },
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script",
+                  "scope": "G",
+                  "config": {
+                    "script": "\tself.view.custom.tab = \"Alarms & State\""
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "ia.container.flex",
+            "meta": {
+              "name": "Spacer_2"
+            },
+            "props": {
+              "direction": "row",
+              "alignItems": "stretch",
+              "style": {
+                "classes": ""
+              }
+            },
+            "position": {
+              "grow": 1
+            },
+            "children": []
+          },
+          {
+            "type": "ia.display.label",
+            "meta": {
+              "name": "WinLabel"
+            },
+            "props": {
+              "text": "Trend window",
+              "style": {
+                "classes": "muted"
+              }
+            },
+            "position": {
+              "shrink": 0
+            }
+          },
+          {
+            "type": "ia.input.button",
+            "meta": {
+              "name": "Win"
+            },
+            "props": {
+              "text": "5 min",
+              "style": {
+                "classes": "win"
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "type": "expr",
+                  "config": {
+                    "expression": "if({view.custom.window} = 5, \"win win-on\", \"win\")"
+                  }
+                }
+              }
+            },
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script",
+                  "scope": "G",
+                  "config": {
+                    "script": "\tself.view.custom.window = 5"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "ia.input.button",
+            "meta": {
+              "name": "Win_2"
+            },
+            "props": {
+              "text": "15 min",
+              "style": {
+                "classes": "win"
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "type": "expr",
+                  "config": {
+                    "expression": "if({view.custom.window} = 15, \"win win-on\", \"win\")"
+                  }
+                }
+              }
+            },
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script",
+                  "scope": "G",
+                  "config": {
+                    "script": "\tself.view.custom.window = 15"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "ia.input.button",
+            "meta": {
+              "name": "Win_3"
+            },
+            "props": {
+              "text": "30 min",
+              "style": {
+                "classes": "win"
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "type": "expr",
+                  "config": {
+                    "expression": "if({view.custom.window} = 30, \"win win-on\", \"win\")"
+                  }
+                }
+              }
+            },
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script",
+                  "scope": "G",
+                  "config": {
+                    "script": "\tself.view.custom.window = 30"
+                  }
+                }
+              }
+            }
+          },
+          {
+            "type": "ia.input.button",
+            "meta": {
+              "name": "Win_4"
+            },
+            "props": {
+              "text": "60 min",
+              "style": {
+                "classes": "win"
+              }
+            },
+            "position": {
+              "shrink": 0
+            },
+            "propConfig": {
+              "props.style.classes": {
+                "binding": {
+                  "type": "expr",
+                  "config": {
+                    "expression": "if({view.custom.window} = 60, \"win win-on\", \"win\")"
+                  }
+                }
+              }
+            },
+            "events": {
+              "component": {
+                "onActionPerformed": {
+                  "type": "script",
+                  "scope": "G",
+                  "config": {
+                    "script": "\tself.view.custom.window = 60"
+                  }
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "type": "ia.display.view",
+        "meta": {
+          "name": "Content"
+        },
+        "props": {
+          "path": "",
+          "params": {
+            "window": 15
+          }
+        },
+        "position": {
+          "grow": 1,
+          "shrink": 1,
+          "basis": "0"
+        },
+        "propConfig": {
+          "props.path": {
+            "binding": {
+              "type": "expr",
+              "config": {
+                "expression": "case({view.custom.tab}, \"Overview\", \"Press1/Tabs/Overview\", \"Tunnel Dryer\", \"Press1/Tabs/Dryer\", \"Web & Print\", \"Press1/Tabs/WebPrint\", \"Production\", \"Press1/Tabs/Production\", \"Alarms & State\", \"Press1/Tabs/Alarms\", \"Press1/Tabs/Pending\")"
+              }
+            }
+          },
+          "props.params.window": {
+            "binding": {
+              "type": "property",
+              "config": {
+                "path": "view.custom.window"
+              }
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "meta": {
+          "name": "BufferNote"
+        },
+        "props": {
+          "text": "",
+          "style": {
+            "classes": "note"
+          }
+        },
+        "position": {
+          "shrink": 0
+        },
+        "propConfig": {
+          "props.text": {
+            "binding": {
+              "type": "expr",
+              "config": {
+                "expression": "now(2000)"
+              },
+              "transforms": [
+                {
+                  "type": "script",
+                  "code": "\treturn press1.buffer_info()[\"note\"]"
+                }
+              ]
+            }
+          }
+        }
+      },
+      {
+        "type": "ia.display.label",
+        "meta": {
+          "name": "Footer"
+        },
+        "props": {
+          "text": "Ignition gateway · MQTT Engine · 40Printing/Dallas/Press Room/Press 1 · 16 raw tags",
+          "style": {
+            "classes": "footer"
+          }
+        },
+        "position": {
+          "shrink": 0
+        }
+      }
+    ]
+  },
+  "propConfig": {
+    "custom.live": {
+      "binding": {
+        "type": "expr",
+        "config": {
+          "expression": "now(2000)"
+        },
+        "transforms": [
+          {
+            "type": "script",
+            "code": "\treturn press1.latest()"
+          }
+        ]
+      }
+    }
+  }
+}
